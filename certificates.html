@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teena Sahu | Certificates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --accent-certificates: #27ae60;
+            --accent-cyber: #3498db;
+            --accent-hackathon: #e74c3c;
+            --accent-webinar: #9b59b6;
+            --accent-course: #f39c12;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-certificates: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            --gradient-cyber: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            --gradient-hackathon: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --gradient-webinar: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            --gradient-course: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --shadow-large: 0 25px 50px rgba(0, 0, 0, 0.2);
+            --glow-certificates: 0 0 30px rgba(39, 174, 96, 0.3);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo a {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            background: var(--gradient-certificates);
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav-logo a:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--glow-certificates);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-certificates);
+            border-radius: 25px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-menu a:hover::before {
+            opacity: 1;
+        }
+
+        .nav-menu a:hover {
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .certificates-hero {
+            background: var(--gradient-certificates);
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificates-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            position: relative;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .certificates-hero p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Certificates Grid */
+        .certificates-grid {
+            padding: 80px 0;
+            background: var(--background-light);
+        }
+
+        .certificate-category {
+            margin-bottom: 5rem;
+        }
+
+        .certificate-category h3 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent-certificates);
+        }
+
+        .certificate-category h3 i {
+            font-size: 2rem;
+            color: var(--accent-certificates);
+        }
+
+        .certificates-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .certificate-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certificate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-certificates);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .certificate-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-large), var(--glow-certificates);
+        }
+
+        /* Certificate Image Container */
+        .certificate-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .certificate-image::after {
+            content: '📄 Click to view';
+            font-size: 1.2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        .certificate-image:hover::after {
+            opacity: 1;
+        }
+
+        .certificate-image:hover {
+            transform: scale(1.03);
+        }
+
+        /* Image Sizing */
+        .certificate-image img {
+            width: auto;
+            max-width: 90%;
+            height: auto;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 1;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .certificate-card:hover .certificate-image img {
+            transform: scale(1.05);
+        }
+
+        /* Special styling for the merit certificate (larger size) */
+        .certificate-card.merit-certificate .certificate-image {
+            height: 350px;
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+        }
+
+        .certificate-card.merit-certificate .certificate-image img {
+            max-width: 85%;
+            max-height: 85%;
+        }
+
+        .certificate-info {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .certificate-info h4 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .issuer {
+            color: var(--accent-certificates);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .issuer::before {
+            content: '🏢';
+            font-size: 1rem;
+        }
+
+        .date {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .date::before {
+            content: '📅';
+            font-size: 0.9rem;
+        }
+
+        .description {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+            font-size: 1rem;
+        }
+
+        .certificate-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .tag {
+            background: var(--gradient-certificates);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        /* Fallback for missing images */
+        .image-placeholder {
+            width: 80%;
+            height: 80%;
+            background: var(--gradient-certificates);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 2rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .certificates-hero h1 {
+                font-size: 3rem;
+            }
+            
+            .certificates-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .certificates-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .certificate-image {
+                height: 220px;
+            }
+            
+            .certificate-card.merit-certificate .certificate-image {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .certificates-hero {
+                padding: 150px 0 80px;
+            }
+            
+            .certificates-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .certificate-image {
+                height: 200px;
+            }
+            
+            .certificate-card.merit-certificate .certificate-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">TS</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Portfolio</a></li>
+                <li><a href="hobby.html">Hobbies</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="certificates-hero">
+        <div class="container">
+            <h1>My Certificates</h1>
+            <p>Academic achievements and professional certificates</p>
+        </div>
+    </header>
+
+    <section class="certificates-grid">
+        <div class="container">
+            <!-- Cyber Security Certificates -->
+            <div class="certificate-category cyber-security">
+                <h3><i class="fas fa-shield-alt"></i> Cyber Security Certificate</h3>
+                <div class="certificates-row">
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/deloitte-cyber.jpg" alt="Deloitte Cyber Security">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Deloitte Cyber Security Fundamentals</h4>
+                            <p class="issuer">Deloitte</p>
+                            <p class="date">Completed: May 2025</p>
+                            <p class="description">Comprehensive cybersecurity training covering threat analysis, risk management, and security protocols from industry leaders.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">Cyber Security</span>
+                                <!-- <span class="tag">Risk Management</span> -->
+                                <!-- <span class="tag">Threat Analysis</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hackathon Certificates -->
+            <div class="certificate-category hackathon">
+                <h3><i class="fas fa-trophy"></i> Hackathon Certificates</h3>
+                <div class="certificates-row">
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/github-hackathon.jpg" alt="GitHub Hackathon">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>GitHub Hackathon</h4>
+                            <p class="issuer">GitHub</p>
+                            <p class="date">Participated: March 2025</p>
+                            <p class="description">Competed in GitHub's campus hackathon focusing on collaborative coding and version control best practices. Made a drug detection web based dashboard for telegram.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">Hackathon</span>
+                                <span class="tag">GitHub</span>
+                                <!-- <span class="tag">Collaboration</span> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/codnex-hackathon.jpg" alt="Codnex Hackathon">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Codnex Hackathon</h4>
+                            <p class="issuer">Codnex</p>
+                            <p class="date">Participated: April 2025</p>
+                            <p class="description">Participated in competitive challenges and problem-solving scenarios at Codnex hackathon.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">Hackathon</span>
+                                <!-- <span class="tag">Competitive Coding</span>
+                                <span class="tag">Problem Solving</span> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/hack-the-cosmos.jpg" alt="Hack the Cosmos">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Hack the Cosmos</h4>
+                            <p class="issuer">Hack The Cosmos</p>
+                            <p class="date">Participated: 2023</p>
+                            <p class="description">hackathon exploring innovative solutions for cosmic challenges and space applications.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">Hackathon</span>
+                                <!-- <span class="tag">Space Tech</span> -->
+                                <span class="tag">OpenInnovation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/alexaverse.jpg" alt="AlexaVerse">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>AlexaDevelopersSRM</h4>
+                            <p class="issuer">ALexaDevelopers</p>
+                            <p class="date">Participated: September 2025</p>
+                            <p class="description">AI-Enabled electromagnetic imaging system for Non-Invasive analysis of dislocated or Abnormal body parts using 5G connectivity.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">Hackathon</span>
+                                <span class="tag">Healthcare</span>
+                                <!-- <span class="tag">Alexa Skills</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Webinar Certificates -->
+            <div class="certificate-category webinar">
+                <h3><i class="fas fa-chalkboard-teacher"></i> Webinar Certificates</h3>
+                <div class="certificates-row">
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/anyware-door.jpg" alt="Anyware Door Cybersecurity">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Cybersecurity</h4>
+                            <p class="issuer">Webinar</p>
+                            <p class="date">Attended: April 2025</p>
+                            <p class="description">Advanced webinar on modern cybersecurity threats and remote access security solutions.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">Webinar</span>
+                                <span class="tag">Cyber Security</span>
+                                <!-- <span class="tag">Remote Access</span> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/cyber-jagrukta.jpg" alt="Cyber Jagrukta Diwas">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Cyber Jagrukta Diwas</h4>
+                            <p class="issuer">Awareness Program</p>
+                            <p class="date">Attended: Feburary 2025</p>
+                            <p class="description">Cybersecurity awareness program focusing on digital safety and cyber threat prevention.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">Webinar</span>
+                                <span class="tag">Cyber Awareness</span>
+                                <span class="tag">Digital Safety</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Certificates -->
+            <div class="certificate-category courses">
+                <h3><i class="fas fa-graduation-cap"></i> Course Certifications</h3>
+                <div class="certificates-row">
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/udemy-cpp.jpg" alt="Udemy OOP C++">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Object-Oriented Programming in C++</h4>
+                            <p class="issuer">Udemy</p>
+                            <p class="date">Completed: April 2025</p>
+                            <p class="description">Comprehensive course on OOP concepts in C++ including classes, objects, inheritance, and polymorphism.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">OOP</span>
+                                <span class="tag">Programming</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/nptel.jpg" alt="NPTEL Certification">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>NPTEL Certification</h4>
+                            <p class="issuer">NPTEL (IIT)</p>
+                            <p class="date">Completed: Jan-April 2025</p>
+                            <p class="description">Advanced certification program from IITs covering cutting-edge technologies and computer science fundamentals.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">NPTEL</span>
+                                <!-- <span class="tag">IIT</span> -->
+                                <!-- <span class="tag">Advanced</span> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/school-skill.jpg" alt="School Merit Certificate">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Class X Information Technology</h4>
+                            <p class="issuer">CBSE</p>
+                            <p class="date">Completed: 2021</p>
+                            <p class="description">Skill certificate in Information Technology demonstrating proficiency in IT fundamentals and applications.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">IT Skills</span>
+                                <span class="tag">CBSE</span>
+                                <span class="tag">Class X</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card merit-certificate">
+                        <div class="certificate-image">
+                            <img src="assets/images/school-merit.jpg" alt="School Merit Certificate">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Merit in Informatics Practices</h4>
+                            <p class="issuer">Krishna Public School</p>
+                            <p class="date">Awarded: 2023</p>
+                            <p class="description">Academic excellence award for outstanding performance in Informatics Practices during senior secondary education.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">Merit</span>
+                                <span class="tag">Class 12</span>
+                                <span class="tag">Informatics</span>
+                                <span class="tag">Academic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements-stats">
+        <div class="container">
+            <h2>Learning Progress</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">9+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Hackathons</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <!-- <div class="stat-label">Categories</div> -->
+                </div>
+                <!-- <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Completion Rate</div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Certificates</p>
+            <p>Committed to continuous learning and skill development</p>
+            <a href="index.html" class="back-to-portfolio">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portfolio
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Click to view functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.certificate-image').forEach(el => {
+                el.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    if (img && img.src) {
+                        window.open(img.src, '_blank');
+                    }
+                });
+            });
+
+            // Check if images are loading
+            const images = document.querySelectorAll('.certificate-image img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    console.error('Failed to load image:', this.src);
+                    // You can add a placeholder here if needed
+                };
+                img.onload = function() {
+                    console.log('Successfully loaded image:', this.src);
+                };
+            });
+        });
+    </script>
+</body>
+</html>
