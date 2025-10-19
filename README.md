@@ -1,6 +1,7 @@
 This is my personal portfolio website showcasing my background, skills, and projects in Computer Science & Cybersecurity. It serves as an online profile to highlight my technical journey, creative work, and achievements.
 
-<!-- 🌐 Live Portfolio ➡️ Visit my portfolio: https://TeenaSahu406.github.io/teena-portfolio -->
+🌐 Live Portfolio 
+➡️ Visit my portfolio: https://teenasahu406.github.io/teena-portfolio/
 
 ✨ Overview Teena Sahu Specialization:Computer Science Engineering (Cybersecurity) Interests: Securing systems, frontend development, digital art, and problem-solving with Data Structures & Algorithms.
 
