@@ -389,6 +389,94 @@
             box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
         }
 
+        /* Achievements Stats */
+        .achievements-stats {
+            background: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .achievements-stats h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-certificates);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .back-to-portfolio {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .back-to-portfolio:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+            background: var(--gradient-certificates);
+            color: var(--white);
+        }
+
+        .back-to-portfolio i {
+            margin-right: 0.5rem;
+        }
+
         /* Fallback for missing images */
         .image-placeholder {
             width: 80%;
@@ -427,6 +515,10 @@
             .certificate-card.merit-certificate .certificate-image {
                 height: 280px;
             }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 480px) {
@@ -444,6 +536,10 @@
             
             .certificate-card.merit-certificate .certificate-image {
                 height: 250px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -470,6 +566,81 @@
 
     <section class="certificates-grid">
         <div class="container">
+            <!-- Course Certifications - Moved to the top -->
+            <div class="certificate-category courses">
+                <h3><i class="fas fa-graduation-cap"></i> Course Certifications</h3>
+                <div class="certificates-row">
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/udemy-cpp.jpg" alt="Udemy OOP C++">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Object-Oriented Programming in C++</h4>
+                            <p class="issuer">Udemy</p>
+                            <p class="date">Completed: April 2025</p>
+                            <p class="description">Comprehensive course on OOP concepts in C++ including classes, objects, inheritance, and polymorphism.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">OOP</span>
+                                <span class="tag">Programming</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/nptel.jpg" alt="NPTEL Certification">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>NPTEL Certification</h4>
+                            <p class="issuer">NPTEL (IIT)</p>
+                            <p class="date">Completed: Jan-April 2025</p>
+                            <p class="description">Advanced certification program from IITs covering cutting-edge technologies and computer science fundamentals.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">NPTEL</span>
+                                <!-- <span class="tag">IIT</span> -->
+                                <!-- <span class="tag">Advanced</span> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="assets/images/school-skill.jpg" alt="School Merit Certificate">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Class X Information Technology</h4>
+                            <p class="issuer">CBSE</p>
+                            <p class="date">Completed: 2021</p>
+                            <p class="description">Skill certificate in Information Technology demonstrating proficiency in IT fundamentals and applications.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">IT Skills</span>
+                                <span class="tag">CBSE</span>
+                                <span class="tag">Class X</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certificate-card merit-certificate">
+                        <div class="certificate-image">
+                            <img src="assets/images/school-merit.jpg" alt="School Merit Certificate">
+                        </div>
+                        <div class="certificate-info">
+                            <h4>Merit in Informatics Practices</h4>
+                            <p class="issuer">Krishna Public School</p>
+                            <p class="date">Awarded: 2023</p>
+                            <p class="description">Academic excellence award for outstanding performance in Informatics Practices during senior secondary education.</p>
+                            <div class="certificate-tags">
+                                <span class="tag">Merit</span>
+                                <span class="tag">Class 12</span>
+                                <span class="tag">Informatics</span>
+                                <span class="tag">Academic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Cyber Security Certificates -->
             <div class="certificate-category cyber-security">
                 <h3><i class="fas fa-shield-alt"></i> Cyber Security Certificate</h3>
@@ -606,81 +777,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Course Certificates -->
-            <div class="certificate-category courses">
-                <h3><i class="fas fa-graduation-cap"></i> Course Certifications</h3>
-                <div class="certificates-row">
-                    <div class="certificate-card">
-                        <div class="certificate-image">
-                            <img src="assets/images/udemy-cpp.jpg" alt="Udemy OOP C++">
-                        </div>
-                        <div class="certificate-info">
-                            <h4>Object-Oriented Programming in C++</h4>
-                            <p class="issuer">Udemy</p>
-                            <p class="date">Completed: April 2025</p>
-                            <p class="description">Comprehensive course on OOP concepts in C++ including classes, objects, inheritance, and polymorphism.</p>
-                            <div class="certificate-tags">
-                                <span class="tag">C++</span>
-                                <span class="tag">OOP</span>
-                                <span class="tag">Programming</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="certificate-card">
-                        <div class="certificate-image">
-                            <img src="assets/images/nptel.jpg" alt="NPTEL Certification">
-                        </div>
-                        <div class="certificate-info">
-                            <h4>NPTEL Certification</h4>
-                            <p class="issuer">NPTEL (IIT)</p>
-                            <p class="date">Completed: Jan-April 2025</p>
-                            <p class="description">Advanced certification program from IITs covering cutting-edge technologies and computer science fundamentals.</p>
-                            <div class="certificate-tags">
-                                <span class="tag">NPTEL</span>
-                                <!-- <span class="tag">IIT</span> -->
-                                <!-- <span class="tag">Advanced</span> -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="certificate-card">
-                        <div class="certificate-image">
-                            <img src="assets/images/school-skill.jpg" alt="School Merit Certificate">
-                        </div>
-                        <div class="certificate-info">
-                            <h4>Class X Information Technology</h4>
-                            <p class="issuer">CBSE</p>
-                            <p class="date">Completed: 2021</p>
-                            <p class="description">Skill certificate in Information Technology demonstrating proficiency in IT fundamentals and applications.</p>
-                            <div class="certificate-tags">
-                                <span class="tag">IT Skills</span>
-                                <span class="tag">CBSE</span>
-                                <span class="tag">Class X</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="certificate-card merit-certificate">
-                        <div class="certificate-image">
-                            <img src="assets/images/school-merit.jpg" alt="School Merit Certificate">
-                        </div>
-                        <div class="certificate-info">
-                            <h4>Merit in Informatics Practices</h4>
-                            <p class="issuer">Krishna Public School</p>
-                            <p class="date">Awarded: 2023</p>
-                            <p class="description">Academic excellence award for outstanding performance in Informatics Practices during senior secondary education.</p>
-                            <div class="certificate-tags">
-                                <span class="tag">Merit</span>
-                                <span class="tag">Class 12</span>
-                                <span class="tag">Informatics</span>
-                                <span class="tag">Academic</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -690,7 +786,7 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-number">9+</div>
-                    <div class="stat-label">Certifications</div>
+                    <div class="stat-label">Certificates</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">4</div>
@@ -698,7 +794,7 @@
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">4</div>
-                    <!-- <div class="stat-label">Categories</div> -->
+                    <div class="stat-label">Categories</div>
                 </div>
                 <!-- <div class="stat-item">
                     <div class="stat-number">100%</div>
